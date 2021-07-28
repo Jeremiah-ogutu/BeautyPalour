@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "957264045229",
+    "project_id": "beautypalour-1d19c",
+    "storage_bucket": "beautypalour-1d19c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:957264045229:android:51be03a6a9fa58c9161224",
+        "android_client_info": {
+          "package_name": "com.moringaschool.beautypalour"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "957264045229-gdtd40v34sc9bkdts7rnk88sln7b1gj7.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.moringaschool.beautypalour",
+            "certificate_hash": "ec8c6e703ff356a03c8ca3e6bcad4b3125abe0e3"
+          }
+        },
+        {
+          "client_id": "957264045229-mhss5v5c2m949vtektnmhr74iq8g6cpn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCsMCywszhXbLJ6mZMOkTgkWn2KcAv2gQ4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "957264045229-mhss5v5c2m949vtektnmhr74iq8g6cpn.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
