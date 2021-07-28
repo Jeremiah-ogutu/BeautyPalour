@@ -7,7 +7,7 @@ import com.google.gson.annotations.SerializedName;
 
 import org.parceler.Parcel;
 
-//@Parcel
+@Parcel
 
 public class Product {
 
@@ -25,10 +25,10 @@ public class Product {
     private String price;
     @SerializedName("price_sign")
     @Expose
-    private Object priceSign;
+    private String priceSign;
     @SerializedName("currency")
     @Expose
-    private Object currency;
+    private String currency;
     @SerializedName("image_link")
     @Expose
     private String imageLink;
@@ -43,16 +43,16 @@ public class Product {
     private String description;
     @SerializedName("rating")
     @Expose
-    private Object rating;
+    private String rating;
     @SerializedName("category")
     @Expose
-    private Object category;
+    private String category;
     @SerializedName("product_type")
     @Expose
     private String productType;
     @SerializedName("tag_list")
     @Expose
-    private List<Object> tagList = null;
+    private List<String> tagList = null;
     @SerializedName("created_at")
     @Expose
     private String createdAt;
@@ -67,7 +67,7 @@ public class Product {
     private String apiFeaturedImage;
     @SerializedName("product_colors")
     @Expose
-    private List<Object> productColors = null;
+    private List<String> productColors = null;
 
     /**
      * No args constructor for use in serialization
@@ -77,7 +77,7 @@ public class Product {
     }
 
     /**
-     * 
+     *
      * @param apiFeaturedImage
      * @param websiteLink
      * @param productColors
@@ -98,7 +98,7 @@ public class Product {
      * @param productType
      * @param updatedAt
      */
-    public Product(Integer id, String brand, String name, String price, Object priceSign, Object currency, String imageLink, String productLink, String websiteLink, String description, Object rating, Object category, String productType, List<Object> tagList, String createdAt, String updatedAt, String productApiUrl, String apiFeaturedImage, List<Object> productColors) {
+    public Product(Integer id, String brand, String name, String price, String priceSign, String currency, String imageLink, String productLink, String websiteLink, String description, String rating, String category, String productType, List<String> tagList, String createdAt, String updatedAt, String productApiUrl, String apiFeaturedImage, List<String> productColors) {
         super();
         this.id = id;
         this.brand = brand;
@@ -157,7 +157,7 @@ public class Product {
         return priceSign;
     }
 
-    public void setPriceSign(Object priceSign) {
+    public void setPriceSign(String priceSign) {
         this.priceSign = priceSign;
     }
 
@@ -165,7 +165,7 @@ public class Product {
         return currency;
     }
 
-    public void setCurrency(Object currency) {
+    public void setCurrency(String currency) {
         this.currency = currency;
     }
 
@@ -205,7 +205,7 @@ public class Product {
         return rating;
     }
 
-    public void setRating(Object rating) {
+    public void setRating(String rating) {
         this.rating = rating;
     }
 
@@ -213,7 +213,7 @@ public class Product {
         return category;
     }
 
-    public void setCategory(Object category) {
+    public void setCategory(String category) {
         this.category = category;
     }
 
@@ -225,11 +225,11 @@ public class Product {
         this.productType = productType;
     }
 
-    public List<Object> getTagList() {
+    public List<String> getTagList() {
         return tagList;
     }
 
-    public void setTagList(List<Object> tagList) {
+    public void setTagList(List<String> tagList) {
         this.tagList = tagList;
     }
 
@@ -265,11 +265,11 @@ public class Product {
         this.apiFeaturedImage = apiFeaturedImage;
     }
 
-    public List<Object> getProductColors() {
+    public List<String> getProductColors() {
         return productColors;
     }
 
-    public void setProductColors(List<Object> productColors) {
+    public void setProductColors(List<String> productColors) {
         this.productColors = productColors;
     }
 

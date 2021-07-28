@@ -1,5 +1,7 @@
 package com.moringaschool.beautypalour.Adapter;
 
+import android.content.Context;
+import android.content.Intent;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,9 +14,13 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.moringaschool.beautypalour.Master.Product;
 import com.moringaschool.beautypalour.R;
+import com.moringaschool.beautypalour.UI.BeautyDetailActivity;
 import com.moringaschool.beautypalour.UI.MainActivity;
 import com.squareup.picasso.Picasso;
 import com.squareup.picasso.Target;
+
+import org.parceler.Parcel;
+import org.parceler.Parcels;
 
 import java.util.List;
 
@@ -23,6 +29,7 @@ import butterknife.ButterKnife;
 
 public class BeautyPalourAdapter extends RecyclerView.Adapter<BeautyPalourAdapter.PostViewHolder> {
     private List<Product> productList;
+    private Context mContext;
 
     public BeautyPalourAdapter(MainActivity mainActivity, List<Product> productList){
         this.productList=productList;
@@ -71,7 +78,11 @@ holder.bindBeautyPalour(productList.get(position));
 
         @Override
         public void onClick(View view){
-            () -> seet
+            int position = getLayoutPosition();
+            Intent intent = new Intent(mContext, BeautyDetailActivity.class);
+            intent.putExtra("position",position);
+            intent.putExtra("Product", Parcels.wrap(productList));
+            mContext.startActivity(intent);
         }
 
         public void bindBeautyPalour(Product product){
