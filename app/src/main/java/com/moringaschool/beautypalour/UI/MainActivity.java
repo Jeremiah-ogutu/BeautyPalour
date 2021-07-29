@@ -12,7 +12,7 @@ import android.widget.TextView;
 
 import com.moringaschool.beautypalour.Adapter.BeautyPalourAdapter;
 import com.moringaschool.beautypalour.Clients.BeautyClient;
-import com.moringaschool.beautypalour.Master.Product;
+import com.moringaschool.beautypalour.Models.Product;
 import com.moringaschool.beautypalour.R;
 
 import java.util.List;
@@ -54,32 +54,33 @@ public class MainActivity extends AppCompatActivity {
         BeautyClient.getRetrofitClient().getProduct().  enqueue(new Callback<List<Product>>() {
             @Override
             public void onResponse(Call<List<Product>> call, Response<List<Product>> response) {
-                if(response.isSuccessful()){
+                if (response.isSuccessful()) {
+
                     productList = response.body();
-                    mAdapter = new BeautyPalourAdapter(MainActivity.this,productList);
+                    mAdapter = new BeautyPalourAdapter(MainActivity.this, productList);
                     mRecyclerView.setAdapter(mAdapter);
                     RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(MainActivity.this);
                     mRecyclerView.setLayoutManager(layoutManager);
                     mRecyclerView.setHasFixedSize(true);
 
                     showBeautyProduct();
-                }else {
+                } else {
                     showUnsuccessfulMessage();
                 }
 
             }
 
+
             @Override
             public void onFailure(Call<List<Product>> call, Throwable t) {
-                Log.e("TAG","onFailure",t);
+                Log.e("TAG", "onFailure", t);
                 hideProgressBar();
                 showFailureMessage();
+            };
 
-            }
-//
-//
-        });
+        }
     }
+
 
     public void hideProgressBar(){
         mProgressbar.setVisibility(View.GONE);
@@ -96,9 +97,7 @@ public class MainActivity extends AppCompatActivity {
         mErrorTextView.setVisibility(View.VISIBLE);
     }
 
-
-
-    }
+}
 
 
 

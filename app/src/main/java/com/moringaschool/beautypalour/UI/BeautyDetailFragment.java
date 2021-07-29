@@ -10,8 +10,13 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
-import com.moringaschool.beautypalour.Master.Product;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.moringaschool.beautypalour.Constants;
+import com.moringaschool.beautypalour.Models.Product;
+import com.moringaschool.beautypalour.Models.ProductColor;
 import com.moringaschool.beautypalour.R;
 import com.squareup.picasso.Picasso;
 
@@ -24,7 +29,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 
-public class BeautyDetailFragment extends Fragment {
+public class BeautyDetailFragment extends Fragment implements View.OnClickListener {
     @BindView(R.id.productImageView)
     ImageView mImageViewLabel;
     @BindView(R.id.descriptionTextView)
@@ -77,6 +82,8 @@ public class BeautyDetailFragment extends Fragment {
         mProductTextview.setText(productList.getProductType());
         mDescriptionTextvie.setText(productList.getDescription());
 
+        mSaveProductsButton.setOnClickListener(this);
+
 
 //        List<String> mProduct = new ArrayList<>();
 //
@@ -85,9 +92,17 @@ public class BeautyDetailFragment extends Fragment {
 //        }
 
 
-
-
-
         return view;
+    }
+
+
+    @Override
+    public void onClick(View view){
+        if(view == mSaveProductsButton){
+            DatabaseReference favouriteProductsRef = FirebaseDatabase.getInstance().getReference().child(Constants.FIREBASE_CHILD_FAVOURITE_PRODUCTS);
+            favouriteProductsRef.push().setValue(productList);
+            Toast.makeText(getContext(),"Product has been added to favouries!",Toast.LENGTH_SHORT).show();
+        }
+
     }
 }

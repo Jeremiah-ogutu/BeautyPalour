@@ -1,13 +1,10 @@
 
-package com.moringaschool.beautypalour.Master;
+package com.moringaschool.beautypalour.Models;
 
 import java.util.List;
+
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
-
-import org.parceler.Parcel;
-
-@Parcel
 
 public class Product {
 
@@ -43,7 +40,7 @@ public class Product {
     private String description;
     @SerializedName("rating")
     @Expose
-    private String rating;
+    private Object rating;
     @SerializedName("category")
     @Expose
     private String category;
@@ -67,7 +64,7 @@ public class Product {
     private String apiFeaturedImage;
     @SerializedName("product_colors")
     @Expose
-    private List<String> productColors = null;
+    private List<ProductColor> productColors = null;
 
     /**
      * No args constructor for use in serialization
@@ -77,7 +74,7 @@ public class Product {
     }
 
     /**
-     *
+     * 
      * @param apiFeaturedImage
      * @param websiteLink
      * @param productColors
@@ -98,7 +95,7 @@ public class Product {
      * @param productType
      * @param updatedAt
      */
-    public Product(Integer id, String brand, String name, String price, String priceSign, String currency, String imageLink, String productLink, String websiteLink, String description, String rating, String category, String productType, List<String> tagList, String createdAt, String updatedAt, String productApiUrl, String apiFeaturedImage, List<String> productColors) {
+    public Product(Integer id, String brand, String name, String price, String priceSign, String currency, String imageLink, String productLink, String websiteLink, String description, Object rating, String category, String productType, List<String> tagList, String createdAt, String updatedAt, String productApiUrl, String apiFeaturedImage, List<ProductColor> productColors) {
         super();
         this.id = id;
         this.brand = brand;
@@ -153,7 +150,7 @@ public class Product {
         this.price = price;
     }
 
-    public Object getPriceSign() {
+    public String getPriceSign() {
         return priceSign;
     }
 
@@ -161,7 +158,7 @@ public class Product {
         this.priceSign = priceSign;
     }
 
-    public Object getCurrency() {
+    public String getCurrency() {
         return currency;
     }
 
@@ -205,11 +202,11 @@ public class Product {
         return rating;
     }
 
-    public void setRating(String rating) {
+    public void setRating(Object rating) {
         this.rating = rating;
     }
 
-    public Object getCategory() {
+    public String getCategory() {
         return category;
     }
 
@@ -265,14 +262,12 @@ public class Product {
         this.apiFeaturedImage = apiFeaturedImage;
     }
 
-    public List<String> getProductColors() {
+    public List<ProductColor> getProductColors() {
         return productColors;
     }
 
-    public void setProductColors(List<String> productColors) {
+    public void setProductColors(List<ProductColor> productColors) {
         this.productColors = productColors;
     }
-
-
 
 }

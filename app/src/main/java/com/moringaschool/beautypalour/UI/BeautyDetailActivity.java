@@ -9,7 +9,7 @@ import android.os.Bundle;
 import android.widget.TextView;
 
 import com.moringaschool.beautypalour.Adapter.BeautyPagerAdapter;
-import com.moringaschool.beautypalour.Master.Product;
+import com.moringaschool.beautypalour.Models.Product;
 import com.moringaschool.beautypalour.R;
 
 import org.parceler.Parcels;

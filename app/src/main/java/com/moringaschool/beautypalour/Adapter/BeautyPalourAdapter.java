@@ -12,7 +12,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.moringaschool.beautypalour.Master.Product;
+import com.moringaschool.beautypalour.Models.Product;
 import com.moringaschool.beautypalour.R;
 import com.moringaschool.beautypalour.UI.BeautyDetailActivity;
 import com.moringaschool.beautypalour.UI.MainActivity;
