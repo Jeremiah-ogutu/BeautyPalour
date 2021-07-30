@@ -100,6 +100,7 @@ public class CreateAccountActivity extends AppCompatActivity implements View.OnC
             hideProgressBar();
 
             if (task.isSuccessful()) {
+                createFirebaseUserProfile(Objects.requireNonNull(task.getResult().getUser()));
                 Log.d(TAG, "Authentication successful");
             } else {
                 Toast.makeText(CreateAccountActivity.this, "Authentication failed.", Toast.LENGTH_SHORT).show();
@@ -190,7 +191,7 @@ public class CreateAccountActivity extends AppCompatActivity implements View.OnC
                     @Override
                     public void onComplete(Task<Void> task) {
                         if (task.isSuccessful()) {
-                            Log.d(TAG, Objects.requireNonNull(user.getDisplayName()));
+//                            Log.d(TAG, Objects.requireNonNull(user.getDisplayName()));
                             Toast.makeText(CreateAccountActivity.this, "The display name has ben set", Toast.LENGTH_LONG).show();
                         }
                     }

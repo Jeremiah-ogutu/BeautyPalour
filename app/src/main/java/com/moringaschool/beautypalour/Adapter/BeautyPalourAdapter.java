@@ -41,8 +41,6 @@ public class BeautyPalourAdapter extends RecyclerView.Adapter<BeautyPalourAdapte
         View view =LayoutInflater.from(parent.getContext()).inflate(R.layout.product_main,parent,false);
         PostViewHolder viewholder = new PostViewHolder(view);
 
-
-
         return viewholder;
     }
 
@@ -80,7 +78,7 @@ holder.bindBeautyPalour(productList.get(position));
         public void onClick(View view){
             int position = getLayoutPosition();
             Intent intent = new Intent(mContext, BeautyDetailActivity.class);
-            intent.putExtra("position",position);
+            intent.putExtra("Product","position");//change
             intent.putExtra("Product", Parcels.wrap(productList));
             mContext.startActivity(intent);
         }
